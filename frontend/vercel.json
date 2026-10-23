@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "https://cryptoscope-backend-ny9o.onrender.com/api/$1"
+    },
+    {
+      "source": "/api",
+      "destination": "https://cryptoscope-backend-ny9o.onrender.com/api"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
