@@ -14,9 +14,10 @@ import { fetchAnalyses, fetchAnalysisDetail } from '@/lib/api';
 import { getPrimitiveMeta } from '@/lib/utils';
 import { ScientificCaveatBanner } from '@/components/ui/StateViews';
 import { PrimitiveBadge } from '@/components/ui/PrimitiveBadge';
+import { AnalysisSummary, AnalysisDetail, SecurityAdvisory } from '@/types';
 
 export const ProtocolGraphPage: React.FC = () => {
-  const { data: analyses } = useQuery({
+  const { data: analyses } = useQuery<AnalysisSummary[]>({
     queryKey: ['analyses'],
     queryFn: fetchAnalyses,
   });
@@ -28,7 +29,7 @@ export const ProtocolGraphPage: React.FC = () => {
 
   const activeId = selectedAnalysisId || analyses?.[0]?.id;
 
-  const { data: analysis } = useQuery({
+  const { data: analysis } = useQuery<AnalysisDetail | null>({
     queryKey: ['analysis', activeId],
     queryFn: () => (activeId ? fetchAnalysisDetail(activeId) : null),
     enabled: !!activeId,
@@ -270,7 +271,7 @@ export const ProtocolGraphPage: React.FC = () => {
                   No weak or legacy algorithms identified.
                 </div>
               ) : (
-                analysis.advisories.map((adv) => (
+                analysis.advisories.map((adv: SecurityAdvisory) => (
                   <div key={adv.id} className="p-3 bg-bg-raised border border-border-default rounded-[4px] space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-text-primary text-[12px] truncate max-w-[200px]">{adv.title}</span>

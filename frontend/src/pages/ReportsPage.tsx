@@ -4,9 +4,10 @@ import { Download, FileJson, FileCode } from 'lucide-react';
 import { fetchAnalyses, getReportDownloadUrl } from '@/lib/api';
 import { formatBytes, truncateHash } from '@/lib/utils';
 import { PrimitiveBadge } from '@/components/ui/PrimitiveBadge';
+import { AnalysisSummary } from '@/types';
 
 export const ReportsPage: React.FC = () => {
-  const { data: analyses } = useQuery({
+  const { data: analyses } = useQuery<AnalysisSummary[]>({
     queryKey: ['analyses'],
     queryFn: fetchAnalyses,
   });
@@ -18,7 +19,7 @@ export const ReportsPage: React.FC = () => {
   const [incMethodology, setIncMethodology] = useState(true);
   const [incLimitations, setIncLimitations] = useState(true);
 
-  const activeTarget = (analyses || []).find(a => a.id === selectedTargetId) || analyses?.[0];
+  const activeTarget = (analyses || []).find((a: AnalysisSummary) => a.id === selectedTargetId) || analyses?.[0];
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto font-mono">
@@ -82,7 +83,7 @@ export const ReportsPage: React.FC = () => {
               onChange={(e) => setSelectedTargetId(e.target.value)}
               className="w-full bg-bg-raised border border-border-default text-text-primary rounded-[4px] px-3 py-2 text-[12px] outline-none focus:border-accent min-h-[44px]"
             >
-              {(analyses || []).map((a) => (
+              {(analyses || []).map((a: AnalysisSummary) => (
                 <option key={a.id} value={a.id}>
                   {a.filename} ({a.isa})
                 </option>
