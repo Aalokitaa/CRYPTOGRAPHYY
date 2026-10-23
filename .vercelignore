@@ -1,0 +1,11 @@
+# Test suites and cache
+**/tests/**
+**/*test*/**
+.pytest_cache/**
+.cache/**
+
+# Documentation and non-essential assets
+docs/**
+docker/**
+reports/*.pdf
+reports/*.html
