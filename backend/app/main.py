@@ -100,6 +100,17 @@ async def generic_exception_handler(request: Request, exc: Exception):
         }
     )
 
+# Root Welcome
+@app.get("/")
+def root():
+    return {
+        "status": "online",
+        "service": "CryptoScope Backend API",
+        "version": "1.0.0",
+        "docs_url": "/docs",
+        "health_url": "/api/health"
+    }
+
 # Health & Status
 @app.get("/api/health")
 def health():
