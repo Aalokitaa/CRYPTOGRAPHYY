@@ -1,0 +1,27 @@
+{
+  "Byte only": {
+    "accuracy": 0.725,
+    "macro_f1": 0.6497,
+    "latency_ms": 0.21
+  },
+  "Instruction only": {
+    "accuracy": 0.725,
+    "macro_f1": 0.6497,
+    "latency_ms": 0.213
+  },
+  "Instruction + CFG": {
+    "accuracy": 0.725,
+    "macro_f1": 0.6497,
+    "latency_ms": 0.21
+  },
+  "Instruction + DFG": {
+    "accuracy": 0.725,
+    "macro_f1": 0.6497,
+    "latency_ms": 0.242
+  },
+  "All features": {
+    "accuracy": 0.725,
+    "macro_f1": 0.6497,
+    "latency_ms": 0.212
+  }
+}

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    container_name: cryptoscope-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./datasets:/app/datasets
+      - ./uploads:/app/uploads
+      - ./reports:/app/reports
+      - ./cryptoscope.db:/app/cryptoscope.db
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=sqlite:///./cryptoscope.db
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/frontend.Dockerfile
+    container_name: cryptoscope-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  toolchain:
+    build:
+      context: .
+      dockerfile: docker/toolchain.Dockerfile
+    container_name: cryptoscope-toolchain
+    volumes:
+      - ./datasets:/workspace/datasets
+    profiles:
+      - toolchain

@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Light Theme (Paper / Editorial-Technical) - Calibrated for WCAG AA */
+    --bg-base: #F5F3EF;
+    --bg-surface: #FFFFFF;
+    --bg-raised: #ECE9E3;
+    --border-default: #D9D5CC;
+    --border-strong: #BDB8AD;
+    --text-primary: #1A1917;
+    --text-secondary: #6B665D;
+    --text-disabled: #9C978D;
+    --accent: #B36A00;
+    --accent-hover: #945700;
+    --accent-on: #FFFFFF;
+    --status-success: #2E7D52;
+    --status-warning: #8C6514;
+    --status-danger: #B83826;
+    --status-info: #6B665D;
+
+    /* Primitive Colors (Non-Blue, Paired with Letter Tag) */
+    --primitive-aes: #E0714F;
+    --primitive-des: #B78AC2;
+    --primitive-rsa: #D4A24C;
+    --primitive-ecc: #4FB3A5;
+    --primitive-sha256: #9DBA4F;
+    --primitive-sha512: #6FA66B;
+    --primitive-hmac: #D46A9A;
+    --primitive-chacha20: #8DC9B8;
+    --primitive-noncrypto: #7A766E;
+    --primitive-unknown: #3D3D3D;
+  }
+
+  .dark {
+    /* Dark Theme (Default - Warm Graphite Instrument Panel) - Calibrated for WCAG AA */
+    --bg-base: #121212;
+    --bg-surface: #1A1A1A;
+    --bg-raised: #222222;
+    --border-default: #2E2E2E;
+    --border-strong: #3D3D3D;
+    --text-primary: #ECEAE6;
+    --text-secondary: #9A968F;
+    --text-disabled: #5E5B55;
+    --accent: #E8A33D;
+    --accent-hover: #F2B04E;
+    --accent-on: #17120A;
+    --status-success: #5DB382;
+    --status-warning: #E0B04A;
+    --status-danger: #E0614F;
+    --status-info: #B8B2A7;
+
+    /* Primitive Colors (Warm Graphite Palette) */
+    --primitive-aes: #E0714F;
+    --primitive-des: #B78AC2;
+    --primitive-rsa: #D4A24C;
+    --primitive-ecc: #4FB3A5;
+    --primitive-sha256: #9DBA4F;
+    --primitive-sha512: #6FA66B;
+    --primitive-hmac: #D46A9A;
+    --primitive-chacha20: #8DC9B8;
+    --primitive-noncrypto: #7A766E;
+    --primitive-unknown: #3D3D3D;
+  }
+
+  * {
+    border-color: var(--border-default);
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.006em;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'tnum';
+    text-align: left;
+  }
+
+  /* Strict Focus Rings: 2px accent focus ring */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--accent);
+  }
+
+  /* Tabular Numerals */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-raised: var(--bg-raised);
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-disabled: var(--text-disabled);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-on: var(--accent-on);
+  --color-success: var(--status-success);
+  --color-warning: var(--status-warning);
+  --color-danger: var(--status-danger);
+  --color-info: var(--status-info);
+
+  --color-prim-aes: var(--primitive-aes);
+  --color-prim-des: var(--primitive-des);
+  --color-prim-rsa: var(--primitive-rsa);
+  --color-prim-ecc: var(--primitive-ecc);
+  --color-prim-sha256: var(--primitive-sha256);
+  --color-prim-sha512: var(--primitive-sha512);
+  --color-prim-hmac: var(--primitive-hmac);
+  --color-prim-chacha20: var(--primitive-chacha20);
+  --color-prim-noncrypto: var(--primitive-noncrypto);
+  --color-prim-unknown: var(--primitive-unknown);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Strict radii: 6px containers, 4px controls */
+  --radius-container: 6px;
+  --radius-control: 4px;
+}
+
+/* 1px offset popover shadow */
+.shadow-popover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-default);
+}
+
+/* Dense 28px table rows */
+.table-dense tr {
+  height: 28px;
+}
+.table-dense td, .table-dense th {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Custom flat scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}

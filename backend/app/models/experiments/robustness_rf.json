@@ -1,0 +1,22 @@
+{
+  "O0": {
+    "accuracy": 0.6583,
+    "macro_f1": 0.624
+  },
+  "O1": {
+    "accuracy": 0.6583,
+    "macro_f1": 0.624
+  },
+  "O2": {
+    "accuracy": 0.6583,
+    "macro_f1": 0.624
+  },
+  "O3": {
+    "accuracy": 0.6583,
+    "macro_f1": 0.624
+  },
+  "Os": {
+    "accuracy": 0.6583,
+    "macro_f1": 0.624
+  }
+}

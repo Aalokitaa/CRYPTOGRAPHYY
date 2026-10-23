@@ -1,0 +1,223 @@
+{
+  "project": "CryptoScope Benchmark Corpus",
+  "version": "1.0.0",
+  "license_policy": "Permissive open-source licenses strictly maintained for defensive research and model training",
+  "entries": [
+    {
+      "category": "crypto",
+      "algorithm": "AES",
+      "file": "datasets/sources/crypto/aes/tiny_aes.c",
+      "upstream": "https://github.com/kokke/tiny-AES-c",
+      "author": "kokke",
+      "license": "Public Domain / The Unlicense",
+      "description": "Standard S-Box table-based AES supporting 128/256-bit keys and ECB/CBC/CTR modes"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "AES",
+      "file": "datasets/sources/crypto/aes/mbedtls_aes.c",
+      "upstream": "mbedTLS / PolarSSL",
+      "author": "ARM Limited / mbedTLS Contributors",
+      "license": "Apache-2.0 / MIT Dual License",
+      "description": "32-bit word-oriented T-Table accelerated AES implementation"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "AES",
+      "file": "datasets/sources/crypto/aes/tablefree_aes.c",
+      "upstream": "CryptoScope Research Corpus",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "Algebraic constant-time AES with GF(2^8) tower field inversion, zero lookup tables"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "DES",
+      "file": "datasets/sources/crypto/des/des_standard.c",
+      "upstream": "FIPS PUB 46-3 Reference",
+      "author": "Public Domain Reference",
+      "license": "Public Domain",
+      "description": "Standard 56-bit key DES with Feistel rounds, IP/FP permutations, and 8 S-Boxes"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "DES",
+      "file": "datasets/sources/crypto/des/des3_triple.c",
+      "upstream": "CryptoScope Benchmark Corpus",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "Triple-DES (3DES) EDE mode with 3 keys"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "RSA",
+      "file": "datasets/sources/crypto/rsa/rsa_modexp.c",
+      "upstream": "CryptoScope Bignum Suite",
+      "author": "Brad Conte / CryptoScope Team",
+      "license": "Public Domain / MIT",
+      "description": "Bignum modular exponentiation with square-and-multiply and multi-precision carry loops"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "RSA",
+      "file": "datasets/sources/crypto/rsa/rsa_pkcs1.c",
+      "upstream": "RFC 2313 / RFC 8017",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "RSA PKCS#1 v1.5 padding and signature verification routines"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "ECC",
+      "file": "datasets/sources/crypto/ecc/ecc_p256.c",
+      "upstream": "NIST SP 800-186",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "NIST P-256 (secp256r1) Weierstrass curve point addition, doubling, and scalar mult"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "ECC",
+      "file": "datasets/sources/crypto/ecc/tweetnacl_curve25519.c",
+      "upstream": "https://tweetnacl.cr.yp.to/",
+      "author": "Daniel J. Bernstein, Tanja Lange, Peter Schwabe, et al.",
+      "license": "Public Domain",
+      "description": "Curve25519 Montgomery ladder scalar multiplication"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "SHA-256",
+      "file": "datasets/sources/crypto/sha256/sha256_conte.c",
+      "upstream": "https://github.com/B-Con/crypto-algorithms",
+      "author": "Brad Conte",
+      "license": "Public Domain",
+      "description": "FIPS 180-4 standard 64-round SHA-256 hash algorithm"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "SHA-256",
+      "file": "datasets/sources/crypto/sha256/sha256_mbedtls.c",
+      "upstream": "mbedTLS",
+      "author": "mbedTLS Contributors",
+      "license": "Apache-2.0",
+      "description": "Compact loop-based SHA-256 compression block"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "SHA-512",
+      "file": "datasets/sources/crypto/sha512/sha512_conte.c",
+      "upstream": "https://github.com/B-Con/crypto-algorithms",
+      "author": "Brad Conte",
+      "license": "Public Domain",
+      "description": "64-bit word FIPS 180-4 standard 80-round SHA-512 hash algorithm"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "HMAC",
+      "file": "datasets/sources/crypto/hmac/hmac_sha256.c",
+      "upstream": "RFC 2104",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "Keyed-Hash Message Authentication Code using SHA-256 with 0x36/0x5C pad constants"
+    },
+    {
+      "category": "crypto",
+      "algorithm": "ChaCha20",
+      "file": "datasets/sources/crypto/chacha20/chacha20_rfc7539.c",
+      "upstream": "RFC 7539",
+      "author": "Daniel J. Bernstein / RFC 7539 Authors",
+      "license": "Public Domain / MIT",
+      "description": "Quarter-round 20-round ChaCha20 stream cipher with expand 32-byte k constant"
+    },
+    {
+      "category": "noncrypto",
+      "algorithm": "Quicksort",
+      "file": "datasets/sources/noncrypto/sorting/quicksort.c",
+      "upstream": "Standard Algorithms",
+      "author": "Public Domain Reference",
+      "license": "Public Domain",
+      "description": "Median-of-three recursive quicksort and sift-down binary heapsort"
+    },
+    {
+      "category": "noncrypto",
+      "algorithm": "MatrixMultiplication",
+      "file": "datasets/sources/noncrypto/math/matrix_mult.c",
+      "upstream": "Numerical Algorithms",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "O(N^3) floating point matrix multiplication and prime sieve"
+    },
+    {
+      "category": "noncrypto",
+      "algorithm": "LZ77",
+      "file": "datasets/sources/noncrypto/compression/lz77_simple.c",
+      "upstream": "Compression Algorithms",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "Sliding window string matching and token emission"
+    },
+    {
+      "category": "noncrypto",
+      "algorithm": "JSONTokenizer",
+      "file": "datasets/sources/noncrypto/strings/json_tokenize.c",
+      "upstream": "Lexical Parsing Suite",
+      "author": "CryptoScope Team",
+      "license": "MIT",
+      "description": "State machine JSON lexical analyzer and Knuth-Morris-Pratt substring search"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "CRC32",
+      "file": "datasets/sources/noncrypto/hard_negatives/crc32.c",
+      "upstream": "IEEE 802.3",
+      "author": "Public Domain",
+      "license": "Public Domain",
+      "description": "CRC32 polynomial division table loop (looks like hash/crypto)"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "Base64",
+      "file": "datasets/sources/noncrypto/hard_negatives/base64.c",
+      "upstream": "RFC 4648",
+      "author": "Public Domain / MIT",
+      "license": "MIT",
+      "description": "Base64 6-bit shift packing and 64-char table lookup"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "XorRotate",
+      "file": "datasets/sources/noncrypto/hard_negatives/xor_rot_loop.c",
+      "upstream": "Obfuscation Reference Suite",
+      "author": "CryptoScope Team",
+      "license": "Public Domain",
+      "description": "Rolling XOR key mask with 3-bit circular rotation loops"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "XorShift128p",
+      "file": "datasets/sources/noncrypto/hard_negatives/prng_xorshift.c",
+      "upstream": "Sebastiano Vigna / PRNG Reference",
+      "author": "Sebastiano Vigna",
+      "license": "Public Domain",
+      "description": "XorShift128+ pseudo-random number generator state update"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "FNV1a",
+      "file": "datasets/sources/noncrypto/hard_negatives/hash_fnv.c",
+      "upstream": "Fowler-Noll-Vo Hash",
+      "author": "Glenn Fowler, Landon Curt Noll, Phong Vo",
+      "license": "Public Domain",
+      "description": "FNV-1a non-cryptographic hash with prime multiplication and XOR"
+    },
+    {
+      "category": "hard_negative",
+      "algorithm": "Murmur3",
+      "file": "datasets/sources/noncrypto/hard_negatives/hash_murmur3.c",
+      "upstream": "Austin Appleby / MurmurHash3",
+      "author": "Austin Appleby",
+      "license": "Public Domain",
+      "description": "MurmurHash3 32-bit non-cryptographic hash with constant multipliers and avalanche"
+    }
+  ]
+}
