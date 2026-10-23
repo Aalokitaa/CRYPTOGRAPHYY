@@ -4,8 +4,7 @@
     "backend": {
       "root": "backend",
       "framework": "fastapi",
-      "entrypoint": "main:app",
-      "excludeFiles": "{tests/**,**/__pycache__/**}"
+      "entrypoint": "main:app"
     },
     "frontend": {
       "root": "frontend",
